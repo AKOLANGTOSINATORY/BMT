@@ -79,7 +79,19 @@ async function sendWebhook(payload) {
 async function start() {
 	await rbx.setCookie(COOKIE);
 	console.log("✅ Logged into Roblox backend");
+   // =============================
+	// CHECK KEY
+	// =============================
+	app.get("/checkkey", (req, res) => {
+		const key = req.query.key;
 
+		// Verify key exists in the VALID_KEYS set
+		if (!key || !VALID_KEYS.has(key)) {
+			return res.status(403).json({ ok: false, error: "INVALID_LICENSE" });
+		}
+
+		return res.json({ ok: true, message: "API Key Valid" });
+	});
 	// =============================
 	// SETRANK (ONLY ENDPOINT)
 	// =============================
