@@ -18,7 +18,8 @@ if (!COOKIE) {
 }
 
 const VALID_KEYS = new Set([
-	"9e2c7b4f1a6d0e8f5c3b9a4d7e1f2c8b6a5"
+	"9e2c7b4f1a6d0e8f5c3b9a4d7e1f2c8b6a5" // [PNP] - Philippine National Police 10148023, 2month bago expire
+
 ]);
 
 const KEY_BINDINGS = new Map();
